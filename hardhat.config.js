@@ -1,5 +1,4 @@
 require("@nomiclabs/hardhat-waffle");
-require("@nomiclabs/hardhat-ganache");
 
 
 // This is a sample Hardhat task. To learn how to create your own go to

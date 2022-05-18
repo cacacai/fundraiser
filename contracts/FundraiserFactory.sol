@@ -12,6 +12,9 @@ contract FundraiserFactory {
         return _fundraisers.length;
     }
     /** 创建合约过程，需要记录一些主要的信息 */
+    /**
+    
+     */
     function createFundraiser (string memory _name, string memory _url, string memory _imageURL, string memory _description, address payable _beneficiary) public {
         Fundraiser fundraiser = new Fundraiser (_name, _url, _imageURL, _description, _beneficiary, msg.sender);
         _fundraisers.push(fundraiser);

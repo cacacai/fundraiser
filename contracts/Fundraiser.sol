@@ -8,8 +8,8 @@ contract Fundraiser is Ownable {
     string public name;
     string public url;
     string public imageURL;
-    string public description; 
-    address payable public beneficiary;
+    string public description; //捐赠描述内容
+    address payable public beneficiary;//捐赠收益人
     address public custodian;
     struct Donation {
         uint256 value;
@@ -21,7 +21,7 @@ contract Fundraiser is Ownable {
 
     event DonationReceived (address indexed donor, uint256 value);
     event Withdraw(uint256 amount);
-
+    /** _beneficiary 受益人 _custodian：捐赠合约的owner，发起创建合约的人 */
     constructor (string memory _name, string memory _url, string memory _imageURL, string memory _description, address payable _beneficiary, address _custodian) {
         name = _name;
         url = _url;
