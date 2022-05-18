@@ -3,6 +3,7 @@
 //
 // When running the script with `npx hardhat run <script>` you'll find the Hardhat
 // Runtime Environment's members available in the global scope.
+//hardhat库使用ethers组件与区块链进行交互
 const hre = require("hardhat");
 
 async function main() {
@@ -14,19 +15,23 @@ async function main() {
   // await hre.run('compile');
 
   // We get the contract to deploy
-  const Greeter = await hre.ethers.getContractFactory("Greeter");
-  const greeter = await Greeter.deploy("Hello, Hardhat!");
+//   const Fundraiser = await hre.ethers.getContractFactory("Fundraiser");
+//   const fundraiser = await Fundraiser.deploy("Hello, Fundraiser!");
+//   await fundraiser.deployed();
+//   console.log("Fundraiser deployed to:", fundraiser.address);
 
-  await greeter.deployed();
+  const FundraiserFactory = await hre.ethers.getContractFactory("FundraiserFactory");
+  const fundraiserFactory = await FundraiserFactory.deploy();// 这是部署合约时候可选的构造参数，
+  await fundraiserFactory.deployed();
+  console.log("fundraiserFactory deployed to:", fundraiserFactory.address);
 
-  console.log("Greeter deployed to:", greeter.address);
+
 }
 
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
-main()
-  .then(() => process.exit(0))
-  .catch((error) => {
+//执行部署
+main().then(() => process.exit(0)).catch(error => {
     console.error(error);
     process.exit(1);
-  });
+});
