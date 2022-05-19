@@ -4,6 +4,7 @@
     "hardhat": "^2.9.5"
   },
   "dependencies": {
+    "@metamask/detect-provider": "^1.2.0",
     "@openzeppelin/contracts": "^4.6.0",
     "async": "^3.2.3"
   }
