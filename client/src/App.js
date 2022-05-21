@@ -6,7 +6,7 @@ import Create from './pages/Create';
 import Person from './pages/Person';
 import NotFound from './pages/NotFound';
 import { Link } from "react-router-dom"
-import { Layout, Menu, Breadcrumb } from 'antd';
+import { Layout } from 'antd';
 
 const { Header, Content, Footer } = Layout;
 
