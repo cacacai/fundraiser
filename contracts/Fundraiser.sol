@@ -5,19 +5,18 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 /** 每一个合约的就代表着一个捐赠过程 */
 contract Fundraiser is Ownable {
-    string public name;
-    string public url;
-    string public imageURL;
+    string public name; //名称
+    string public url;// 自定义项目详细内容地址
+    string public imageURL; //展示图片
     string public description; //捐赠描述内容
     address payable public beneficiary;//捐赠收益人
-    address public custodian;
     struct Donation {
         uint256 value;
         uint256 date; 
     }
-    mapping (address => Donation[]) private _donations;
-    uint256 public totalDonations;
-    uint256 public donationsCount;
+    mapping (address => Donation[]) private _donations;//捐赠记录
+    uint256 public totalDonations;//捐赠总额
+    uint256 public donationsCount;//捐赠次数
 
     event DonationReceived (address indexed donor, uint256 value);
     event Withdraw(uint256 amount);
