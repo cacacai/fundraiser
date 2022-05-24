@@ -6,7 +6,7 @@ import Create from './pages/Create';
 import Person from './pages/Person';
 import NotFound from './pages/NotFound';
 import { Link } from "react-router-dom"
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, Row, Col } from 'antd';
 
 
 
@@ -30,15 +30,20 @@ function App() {
           </Menu>
         </Header>
         <Content className="site-layout" style={{ padding: '0 50px', marginTop: 64 }}>
-          <div className="site-layout-background" style={{ padding: 24, minHeight: 380 }}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/detail" element={<Detail />} />
-              <Route path="/create" element={<Create />} />
-              <Route path="/person" element={<Person />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </div>
+          <Row>
+            <Col span={12} offset={6}>
+              <div className="site-layout-background" style={{ padding: 24, minHeight: 380 }}>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/detail" element={<Detail />} />
+                  <Route path="/create" element={<Create />} />
+                  <Route path="/person" element={<Person />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </div>
+            </Col>
+          </Row>
+
         </Content>
         <Footer style={{ textAlign: 'center' }}>cacacai</Footer>
       </Layout>
